@@ -34,8 +34,8 @@ function Checkout(props){
                                     }
                                 ],
                                 redirect_urls: {
-                                    return_url: '/payment-complete',
-                                    cancel_url: '/'
+                                    return_url: 'https://visaworkslondon.com/payment-complete',
+                                    cancel_url: 'https://visaworkslondon.com'
                                   }
                             });
                         },
