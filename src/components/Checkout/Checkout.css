@@ -1,0 +1,33 @@
+#checkoutList{
+    position: absolute;    
+    margin-top: 150px;
+    margin-left: 50vw;
+}
+
+#checkoutList h1{
+    transform: translate(-50%);
+}
+
+
+#checkoutButton {
+    position: absolute;
+    margin-top: 500px;
+    transform: translate(-50%);
+    margin-left: 50vw;
+}
+
+#checkoutTable {
+    transform: translate(-50%);
+    width:350px;
+    
+}
+
+table, th, td {
+    text-align: left;
+    border-collapse: collapse;
+    padding: 10px;
+    
+    
+  }
+
+ 

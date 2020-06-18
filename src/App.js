@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import Homepage from './components/Homepage/Homepage'
+import Checkout from './components/Checkout/Checkout'
+import PaymentComplete from './components/PaymentComplete/PaymentComplete'
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {
+  BrowserRouter as Router, 
+  Route,  
+} from 'react-router-dom';
+
+class App extends React.Component{
+
+  constructor(props){
+    super(props)
+    this.state={
+      cart:JSON.parse(localStorage.getItem('Cart test')) || {},
+    }
+  }
+
+  update(){
+    this.forceUpdate()
+    console.log(JSON.parse(localStorage.getItem('Cart test')))
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <Router>
+        {<Route exact path="/" render={()=> <Homepage update={this.update.bind(this)} />}/>}
+        {<Route exact path="/checkout" render={()=> <Checkout cart={this.state.cart}/>}/>}
+        {<Route exact path="/payment-complete" render={()=> <PaymentComplete/>}/>}
+        </Router>
+      </div>
+    );
+  }
+  
 }
 
 export default App;
