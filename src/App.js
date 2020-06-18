@@ -2,7 +2,6 @@ import React from 'react';
 
 import Homepage from './components/Homepage/Homepage'
 import Checkout from './components/Checkout/Checkout'
-import PaymentComplete from './components/PaymentComplete/PaymentComplete'
 
 import './App.css';
 
@@ -31,7 +30,6 @@ class App extends React.Component{
         <Router>
         {<Route exact path="/" render={()=> <Homepage update={this.update.bind(this)} />}/>}
         {<Route exact path="/checkout" render={()=> <Checkout cart={this.state.cart}/>}/>}
-        {<Route exact path="/payment-complete" render={()=> <PaymentComplete/>}/>}
         </Router>
       </div>
     );

@@ -7,6 +7,7 @@ import './Checkout.css'
 function Checkout(props){
     
     const [loaded, setLoaded] = useState(false);
+    const [paidFor, setPaidFor] = useState(false)
     
 
     let paypalRef = useRef();
@@ -32,16 +33,13 @@ function Checkout(props){
                                             value: props.cart.price
                                         }
                                     }
-                                ],
-                                redirect_urls: {
-                                    return_url: 'https://visaworkslondon.com/payment-complete',
-                                    cancel_url: 'https://visaworkslondon.com'
-                                  }
+                                ]
                             });
                         },
                         onApprove: async (data, actions) => {
+                              
                             const order = await actions.order.capture();
-                            
+                            setPaidFor(true)
                             
 
                             console.log(order);
@@ -59,7 +57,16 @@ function Checkout(props){
 return(
     <div> 
         <h1><a href="/">VISAWORKS.</a></h1>
-        <div id="checkoutList">
+        
+
+        {paidFor? (
+            <div>
+                <h3>Thank you so much for your purchase. The payment has been made and the transaction has been completed.</h3>
+                <h3>The receipt and payment transaction details will be emailed to you shortly...</h3>
+            </div>
+        ): (
+            <div>
+            <div id="checkoutList">
             <h1>Your Cart:</h1>
             <table id="checkoutTable">
                 <tr>
@@ -80,8 +87,32 @@ return(
             </tr>
             </table>
         </div>
-             
-        <div id="checkoutButton" ref={v => (paypalRef = v)}/>
+        <div id="checkoutList">
+        <h1>Your Cart:</h1>
+        <table id="checkoutTable">
+            <tr>
+                <th>Items</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+         <tr>
+            <th>{props.cart.name}</th>
+            <th>{props.cart.quantity}</th>
+            <th>£{props.cart.price}</th>
+        </tr>    
+        
+        <tr id="lastRow">
+            <th>Total:</th>
+            <th>{props.cart.quantity}</th>
+            <th>£{props.cart.price}</th>
+        </tr>
+        </table>
+    </div>
+         
+    <div id="checkoutButton" ref={v => (paypalRef = v)}/>
+    </div>
+        
+        )}
     </div>
 )
 
