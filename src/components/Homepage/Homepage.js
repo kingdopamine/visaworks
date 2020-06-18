@@ -36,7 +36,7 @@ class Homepage extends React.Component {
                 </div>
                 <div id="alignMass">
                     <h3>IRIDESCENT NIKE CAP</h3>
-                    <h3>£188.00</h3>
+                    <h3>£0.50</h3>
                     <div className="iconContainer">
                     {this.state.nikeCap.map((img, index)=>{
                         return (
@@ -53,11 +53,12 @@ class Homepage extends React.Component {
                     })}
                     </div>
                     <div className="productDescription">
-                        <h2 className="about">ABOUT</h2><h2 className="addToCart" onClick={localStorage.setItem('Cart test', JSON.stringify({name:'Iridescent Nike Cap',quantity:1,price:188.00}))}>ADD TO CART</h2><a href="/checkout"><h2 className="checkout">CHECKOUT</h2></a>
+                        <h2 className="about">ABOUT</h2><h2 className="addToCart" onClick={localStorage.setItem('Cart test', JSON.stringify({name:'Iridescent Nike Cap',quantity:1,price:0.50}))}>ADD TO CART</h2><a href="/checkout"><h2 className="checkout">CHECKOUT</h2></a>
                         <p>This navy blue heritage 86 Nike Cap has been meticulously hand-set and decorated with over 650 iridescent viloet-blue base Swarovski crystals. Even more beautiful in person, this uniquely customised luxury streetwear piece is one of a kind. Labeled as 'one size fits most', only one of this cap has been made.</p>
                     </div>
                     <div id="comingSoon">
                         <h2>MORE PIECES, AND ART WORK COMING SOON...</h2>
+                        <h3>for bespoke work, click <a href="mailto:studio@visaworkslondon.com">HERE</a> to email</h3>
                         <h2><a href="https://instagram.com/visa.works" target="blank"><i class="fab fa-instagram"></i></a></h2>
                     </div>
                 </div>

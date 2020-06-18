@@ -13,7 +13,7 @@ function Checkout(props){
 
     useEffect(()=>{
         const script = document.createElement("script");
-        script.src = 'https://www.paypal.com/sdk/js?client-id=AVD6KOXBKiwWspUlAJ6t3TNvKGJTx9KQoDFgxJ7vmrMNJKrVqO-T35KHVLS_IUpGFAl9J90Q7BWUaORM&currency=GBP';
+        script.src = 'https://www.paypal.com/sdk/js?client-id=ASalCXjt7XRk6kU1sLZYmYC9Idt4H4L1yueczOMjXyYA5GNXw2z9Do6WcWr_g6UarsUSvyACKaxv6-Qr&currency=GBP';
         script.addEventListener('load', () => setLoaded(true));
         document.body.appendChild(script);
 
