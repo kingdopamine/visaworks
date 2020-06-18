@@ -32,7 +32,11 @@ function Checkout(props){
                                             value: props.cart.price
                                         }
                                     }
-                                ]
+                                ],
+                                redirect_urls: {
+                                    return_url: '/payment-complete',
+                                    cancel_url: '/'
+                                  }
                             });
                         },
                         onApprove: async (data, actions) => {
