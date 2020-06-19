@@ -17,8 +17,9 @@ class App extends React.Component{
     super(props)
     this.state={
       cart:JSON.parse(localStorage.getItem('Cart')) || [0],
-      shipping:JSON.parse(localStorage.getItem('Shipping')) || '5.00',
-      subtotal:JSON.parse(localStorage.getItem('Subtotal')) || 0
+      shipping:JSON.parse(localStorage.getItem('Shipping')) || 5,
+      subtotal:JSON.parse(localStorage.getItem('Subtotal')) || 0,
+      
     }
   }
 
@@ -26,6 +27,7 @@ class App extends React.Component{
   shipping(shipping){
     localStorage.setItem('Shipping', JSON.stringify(shipping))
     this.forceUpdate()
+    console.log(this.state.total)
   }
 
   render(){
@@ -34,7 +36,7 @@ class App extends React.Component{
         <Router>
         {<Route exact path="/" render={()=> <Homepage />}/>}
         {<Route exact path="/shipping-zone" render={()=> <ShippingZone shipping={this.shipping.bind(this)} cart={this.state.cart}/>}/>}
-        {<Route exact path="/checkout" render={()=> <Checkout cart={this.state.cart} shipping={this.state.shipping} subtotal={this.state.subtotal}/>}/>}
+        {<Route exact path="/checkout" render={()=> <Checkout cart={this.state.cart} shipping={this.state.shipping} subtotal={this.state.subtotal} />}/>}
         </Router>
       </div>
     );

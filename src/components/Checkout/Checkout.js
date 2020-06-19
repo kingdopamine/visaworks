@@ -20,12 +20,14 @@ function Checkout(props){
 
     useEffect(()=>{
         const script = document.createElement("script");
-        script.src = 'https://www.paypal.com/sdk/js?client-id=ASalCXjt7XRk6kU1sLZYmYC9Idt4H4L1yueczOMjXyYA5GNXw2z9Do6WcWr_g6UarsUSvyACKaxv6-Qr&currency=GBP';
+        script.src = 'https://www.paypal.com/sdk/js?client-id=ATDRDEsQI5V6opLjhuMUDUMps5Zwh62DO8DBB1yO55YjYA9e6IWgmt9iRmnluQ6V1lj58g5yIrtWpvpV&currency=GBP';
         script.addEventListener('load', () => setLoaded(true));
         document.body.appendChild(script);
         
 
         if(loaded){
+            let total = props.subtotal + props.shipping
+            console.log(total)
            setTimeout(()=>{
                
                 window.paypal
@@ -38,7 +40,7 @@ function Checkout(props){
                                         description:'VISAWORKS',
                                         amount: {
                                             currency_code: 'GBP',
-                                            value:props.subtotal + props.shipping,
+                                            value:total,
                                             breakdown:{
                                                 item_total:{
                                                     currency_code: 'GBP',
@@ -131,7 +133,7 @@ return(
             <tr id="lastRow">
                 <th>Total:</th>
                 <th>{props.cart.quantity}</th>
-                <th>£{props.subtotal + props.shipping}.00</th>
+                
             </tr>
             </table>
         </div>
