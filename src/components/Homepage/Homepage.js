@@ -16,8 +16,8 @@ class Homepage extends React.Component {
         this.state={
             nikeCap:[
                 nikeCap,
-                //nikeCap1,
                 nikeCap4,
+                nikeCap1,
                 //nikeCap3,
                 //nikeCap2
             ],
