@@ -8,6 +8,7 @@ import nikeCap2 from '../../media/NikeCap/visaworks-x-nike-heritage-86-nike-cap-
 import nikeCap3 from '../../media/NikeCap/visaworks-x-nike-heritage-86-nike-cap-3.jpg'
 import nikeCap4 from '../../media/NikeCap/visaworks-x-nike-heritage-86-nike-cap-4.jpg'
 
+import depopIcon from './depopIcon.png'
 
 class Homepage extends React.Component {
     constructor(props){
@@ -59,7 +60,7 @@ class Homepage extends React.Component {
                     <div id="comingSoon">
                         <h2>MORE PIECES, AND ART WORK COMING SOON...</h2>
                         <h3>for bespoke work, click <a href="mailto:studio@visaworkslondon.com">HERE</a> to email</h3>
-                        <h2><a href="https://instagram.com/visa.works" target="blank"><i class="fab fa-instagram"></i></a></h2>
+                        <h2 id="h2diff"><a href="https://instagram.com/visaworks" target="blank"><i class="fab fa-instagram"></i></a></h2><a href="https://www.depop.com/visaworks/"><img id="dpopIcon" src={depopIcon}/></a>
                     </div>
                 </div>
                 
