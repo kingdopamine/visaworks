@@ -133,7 +133,7 @@ return(
             <tr id="lastRow">
                 <th>Total:</th>
                 <th>{props.cart.quantity}</th>
-                
+                <th>£{props.subtotal + props.shipping}.00</th>
             </tr>
             </table>
         </div>
