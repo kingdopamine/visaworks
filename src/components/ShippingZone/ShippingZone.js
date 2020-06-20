@@ -12,6 +12,7 @@ class ShippingZone extends React.Component{
     }
 
     componentDidMount(){
+        this.props.shipping(5)
         this.subtotal()
     }
 
